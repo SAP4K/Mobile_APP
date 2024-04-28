@@ -3,9 +3,10 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:teza_licenta_prototip/details_project.dart';
 import 'data_from_cnc_machine.dart';
 import 'details_project.dart';
-List<dates_from_cnc> dates = <dates_from_cnc>[dates_from_cnc.test('test.nc','11.11.2022',0.3),
-  dates_from_cnc.test('hello.nc', '20.01.2023', 0.7),
-  dates_from_cnc.test('tico.nc', '25.06.2023', 0.9)];
+import 'appBar.dart';
+List<dates_from_cnc> dates = <dates_from_cnc>[dates_from_cnc.test('test.nc','11.11.2022',0.3,'200','1:11:21'),
+  dates_from_cnc.test('hello.nc', '20.01.2023', 0.7,'139','2:51:33'),
+  dates_from_cnc.test('tico.nc', '25.06.2023', 0.9,'99','4:23:01')];
 class MainWindow extends StatelessWidget
 {
   MainWindow();
@@ -37,7 +38,6 @@ class MainWindow extends StatelessWidget
             (
               onPressed: ()
               {
-                print("este");
                 Navigator.of(context).push
                   (
 
@@ -65,12 +65,7 @@ class MainWindow extends StatelessWidget
     return Scaffold
       (
       backgroundColor: Colors.white,
-      appBar:AppBar
-        (
-        backgroundColor: Colors.blue.shade500,
-        title: Text('Istoricul proiectelor'),
-        shadowColor: Theme.of(context).colorScheme.shadow,
-      ),
+      appBar:app_bar(context,'Istoricul Proiectelor'),
       body: SafeArea
         (
         child:
@@ -83,6 +78,7 @@ class MainWindow extends StatelessWidget
               },
           ),
       ),
+      bottomNavigationBar: bottom_navigation(),
     );
   }
 }
