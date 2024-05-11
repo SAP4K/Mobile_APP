@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'list_projects.dart';
 import 'HomeWindow.dart';
-import 'appBar.dart';
 import 'package:go_router/go_router.dart';
 
 class wrapper extends StatefulWidget
@@ -122,7 +121,7 @@ class app_Navigatr
                       builder: (context,state)
                       {
                         return Text("Notificari");
-                      }
+                      },
                   ),
                 ],
               ),
@@ -138,7 +137,7 @@ class app_Navigatr
                           builder: (context,state)
                           {
                             return Text("Setari");
-                          }
+                          },
                         ),
                     ],
                   ),

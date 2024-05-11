@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'details_project.dart';
 import 'data_from_cnc_machine.dart';
-import 'details_project.dart';
 import 'appBar.dart';
 List<dates_from_cnc> dates = <dates_from_cnc>[dates_from_cnc.test('test.nc','11.11.2022',0.3,'200','1:11:21'),
   dates_from_cnc.test('hello.nc', '20.01.2023', 0.7,'139','2:51:33'),
@@ -16,7 +15,7 @@ class ListaProiecte extends StatefulWidget
 
 class _ListaProiecteState extends State<ListaProiecte> {
   Widget Element(BuildContext context,int index,List<dates_from_cnc> personal)
-  {int q=0;
+  {
     return Padding(
       padding:EdgeInsets.all(13),
       child:Container
@@ -29,7 +28,7 @@ class _ListaProiecteState extends State<ListaProiecte> {
                       color: Colors.black.withOpacity(0.4),
                       spreadRadius: 5,
                       blurRadius:  30,
-                      offset: Offset(3,3))]),
+                      offset: Offset(3,3) )] ),
           width: 5,
           height: 5,
           child:TextButton

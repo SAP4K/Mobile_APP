@@ -2,18 +2,45 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'appBar.dart';
-class HomeWindow extends StatelessWidget
-{
 
+class HomeWindow extends StatefulWidget
+{
+  @override
+  State<HomeWindow> createState() => _HomeWindowState();
+}
+
+class _HomeWindowState extends State<HomeWindow> {
+  double current_slider_value = 0;
+  List<bool> selector_xy =
+  [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+  ];
+  List<bool> selector_z =
+  [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
   Widget build(BuildContext context)
   {
     return Scaffold
       (
-
       appBar: app_bar(context,'Acasa'),
       body: SafeArea
         (
-          child: Column
+
+          child:SingleChildScrollView(
+          child:Column
             (
               children: <Widget>
               [
@@ -23,7 +50,7 @@ class HomeWindow extends StatelessWidget
                     (
                       children:
                       [
-                        SizedBox(height: 50,),
+                        SizedBox(height: 50),
                         Container
                           (
                           width: MediaQuery.of(context).size.width*0.95,
@@ -44,31 +71,72 @@ class HomeWindow extends StatelessWidget
                                         Padding(padding: EdgeInsets.only(bottom: 10) ,child:  Row(
                                             children: <Widget>
                                             [
-                                              Padding(padding: EdgeInsets.only(right: 10),
-                                              child: MaterialButton
-                                                (
-                                                  color: Colors.blueAccent.shade100,
-                                                  minWidth: 100,
-                                                  height: 100,
-                                                  onPressed: ()
-                                                  {
+                                              Container(
+                                                decoration: BoxDecoration
+                                                  (
+                                                    boxShadow:
+                                                    [
+                                                      BoxShadow
+                                                        (
+                                                          color: Colors.black.withOpacity(0.35),
+                                                          spreadRadius: 1,
+                                                          blurRadius:  50,
+                                                          offset: Offset(-10,-10)
+                                                        ),
+                                                    ],
+                                                  ),
 
-                                                  },
-                                                  child: Text("A",style: TextStyle(fontSize: 50),),
-                                              ), ),
-                                              Padding(padding: EdgeInsets.only(right: 10),
-                                              child: MaterialButton
-                                                (
-                                                color: Colors.blueAccent.shade100,
-                                                minWidth: 100,
-                                                height: 100,
-                                                  onPressed: ()
-                                                  {
+                                                child:Padding(padding: EdgeInsets.only(right: 10),
+                                                  child: MaterialButton
+                                                    (
+                                                      color: Colors.blueAccent.shade100,
+                                                      minWidth: 100,
+                                                      height: 100,
+                                                      onPressed: ()
+                                                      {
 
-                                                  },
-                                                child: Text("B",style: TextStyle(fontSize: 50),),
-                                                ), ),
-                                              MaterialButton
+                                                      },
+                                                      child: Icon(CupertinoIcons.arrow_up_left,size: 60,color:Colors.white),
+                                                  ), ),),
+                                              Container(
+                                                decoration: BoxDecoration
+                                                  (
+                                                    boxShadow: [
+                                                    BoxShadow
+                                                      (
+                                                        color: Colors.black.withOpacity(0.35),
+                                                        spreadRadius: 1,
+                                                        blurRadius:  60,
+                                                        offset: Offset(0,-20)
+                                                      ),],
+                                                  ),
+                                                child:Padding(padding: EdgeInsets.only(right: 10),
+                                                  child: MaterialButton
+                                                    (
+                                                    color: Colors.blueAccent.shade100,
+                                                    minWidth: 100,
+                                                    height: 100,
+                                                      onPressed: ()
+                                                      {
+
+                                                      },
+                                                    child: Icon(CupertinoIcons.arrow_up,size: 60,color: Colors.white,),
+                                                ), ),),
+                                              Container(
+                                                decoration: BoxDecoration
+                                                  (
+                                                    boxShadow:
+                                                    [
+                                                      BoxShadow
+                                                        (
+                                                          color: Colors.black.withOpacity(0.35),
+                                                          spreadRadius: 1,
+                                                          blurRadius: 60,
+                                                          offset: Offset(20,-20),
+                                                        ),
+                                                    ],
+                                                  ),
+                                              child:MaterialButton
                                                 (
                                                 color: Colors.blueAccent.shade100,
                                                 minWidth: 100,
@@ -77,22 +145,37 @@ class HomeWindow extends StatelessWidget
                                                 {
 
                                                 },
-                                                child: Text("C",style: TextStyle(fontSize: 50),),
-                                              ),
+                                                child: Icon(CupertinoIcons.arrow_up_right,size: 60,color: Colors.white,),
+                                              ), ),
                                             ],
                                           ), ),
                                         Padding( padding: EdgeInsets.only(bottom: 10),child: Row(
                                             children: <Widget>
                                             [
-                                              Padding( padding: EdgeInsets.only(right: 10),
+                                              Container(
+                                                decoration:
+                                                BoxDecoration
+                                                  (
+                                                    boxShadow:
+                                                    [
+                                                     BoxShadow
+                                                       (
+                                                       color: Colors.black.withOpacity(0.35),
+                                                       spreadRadius: 1,
+                                                       blurRadius: 60,
+                                                       offset: Offset(-30,0),
+                                                     )
+                                                    ],
+                                                  ),
+                                              child:Padding( padding: EdgeInsets.only(right: 10),
                                               child: MaterialButton
                                                 (
                                                   color: Colors.blueAccent.shade100,
                                                   minWidth: 100,
                                                   height: 100,
                                                   onPressed: (){},
-                                                  child: Text("D",style: TextStyle(fontSize: 50),),
-                                                ), ),
+                                                  child: Icon(CupertinoIcons.arrow_left,size: 60,color: Colors.white,)
+                                                ), ), ),
                                               Padding( padding: EdgeInsets.only(right: 10) ,
                                               child:MaterialButton
                                                 (
@@ -100,47 +183,103 @@ class HomeWindow extends StatelessWidget
                                                 minWidth: 100,
                                                 height: 100,
                                                 onPressed: (){},
-                                                child: Text("E",style: TextStyle(fontSize: 50),),
+                                                child: Icon(Icons.stop_circle_outlined,size: 60,color: Colors.red, )
                                               ),),
-                                              MaterialButton
+                                              Container(
+                                                decoration:BoxDecoration
+                                                  (
+                                                  boxShadow:
+                                                  [
+                                                    BoxShadow
+                                                      (
+                                                      color: Colors.black.withOpacity(0.35),
+                                                      spreadRadius: 1,
+                                                      blurRadius: 60,
+                                                      offset: Offset(20,0),
+                                                    )
+                                                  ],
+                                                ),
+                                              child:MaterialButton
                                                 (
                                                 color: Colors.blueAccent.shade100,
                                                 minWidth: 100,
                                                 height: 100,
                                                 onPressed: (){},
-                                                child: Text("E",style: TextStyle(fontSize: 50),),
-                                              ),
+                                                child: Icon(CupertinoIcons.arrow_right,size: 60,color: Colors.white,)
+                                              ), ),
                                             ],
                                           ) ),
                                         Row(
                                            children: <Widget>
                                            [
-                                             Padding(padding: EdgeInsets.only(right: 10) ,
+                                             Container(
+                                               decoration:BoxDecoration
+                                                 (
+                                                 boxShadow:
+                                                 [
+                                                   BoxShadow
+                                                     (
+                                                     color: Colors.black.withOpacity(0.35),
+                                                     spreadRadius: 1,
+                                                     blurRadius: 60,
+                                                     offset: Offset(-20,20),
+                                                   )
+                                                 ],
+                                               ),
+                                             child:Padding(padding: EdgeInsets.only(right: 10) ,
                                              child:MaterialButton
                                                 (
                                                  color: Colors.blueAccent.shade100,
                                                  minWidth: 100,
                                                  height: 100,
                                                  onPressed: (){},
-                                                 child: Text("F",style: TextStyle(fontSize: 50),),
-                                                ), ),
-                                             Padding( padding: EdgeInsets.only(right: 10) ,
+                                                 child: Icon(CupertinoIcons.arrow_down_left,size: 60,color: Colors.white,),
+                                                ), ),),
+                                             Container(
+                                               decoration:BoxDecoration
+                                                 (
+                                                 boxShadow:
+                                                 [
+                                                   BoxShadow
+                                                     (
+                                                     color: Colors.black.withOpacity(0.35),
+                                                     spreadRadius: 1,
+                                                     blurRadius: 60,
+                                                     offset: Offset(0,20),
+                                                   )
+                                                 ],
+                                               ),
+                                             child:Padding( padding: EdgeInsets.only(right: 10) ,
                                              child:MaterialButton
                                                (
                                                color: Colors.blueAccent.shade100,
                                                minWidth: 100,
                                                height: 100,
                                                onPressed: (){},
-                                               child: Text("G",style: TextStyle(fontSize: 50),),
-                                             ),),
-                                             MaterialButton
+                                               child: Icon(CupertinoIcons.arrow_down,size: 60,color:Colors.white),
+                                             ),),),
+                                             Container(
+                                               decoration:BoxDecoration
+                                                 (
+                                                 boxShadow:
+                                                 [
+                                                   BoxShadow
+                                                     (
+                                                     color: Colors.black.withOpacity(0.35),
+                                                     spreadRadius: 1,
+                                                     blurRadius: 60,
+                                                     offset: Offset(20,20),
+                                                   )
+                                                 ],
+                                               ),
+                                             child:MaterialButton
                                                (
                                                color: Colors.blueAccent.shade100,
                                                minWidth: 100,
                                                height: 100,
                                                onPressed: (){},
-                                               child: Text("H",style: TextStyle(fontSize: 50),),
-                                             ),
+                                               child: Icon(CupertinoIcons.arrow_down_right,size: 60,color: Colors.white)
+                                             ), ),
                                            ],
                                           ),
                                       ],
@@ -149,49 +288,262 @@ class HomeWindow extends StatelessWidget
                               Expanded
                                 (
                                   flex: 3,
-                                  child: Container
-                                    (
-                                    decoration: BoxDecoration(color: Colors.deepOrangeAccent),
-                                    child: Column
+                                    child: FittedBox(
+                                    child:Column
                                       (
                                           children: <Widget>
                                           [
-                                            MaterialButton
-                                              (
-                                                onPressed: (){},
-                                                child: Text("a"),
+                                            Container(
+                                              decoration:BoxDecoration
+                                                    (
+
+                                                        boxShadow:
+                                                        [
+                                                        BoxShadow
+                                                        (
+                                                        color: Colors.black.withOpacity(0.35),
+                                                      spreadRadius: 1,
+                                                      blurRadius: 50,
+                                                      offset: Offset(10,-20),
+                                                    )
+                                                ],
                                               ),
-                                            MaterialButton
+                                            child:Padding(padding: EdgeInsets.fromLTRB(0,10,0,10),
+                                            child:MaterialButton
                                               (
+                                                color: Colors.blueAccent.shade100,
+                                                minWidth: 100,
+                                                height: 100,
+                                                onPressed: (){},
+                                                child: Icon(CupertinoIcons.arrow_up,size: 60,color: Colors.white)
+                                              ),),),
+                                            Container(
+                                              decoration:       BoxDecoration
+                                                (
+                                                boxShadow:
+                                                [
+                                                  BoxShadow
+                                                    (
+                                                    color: Colors.black.withOpacity(0.35),
+                                                    spreadRadius: 1,
+                                                    blurRadius: 60,
+                                                    offset: Offset(20,0),
+                                                  )
+                                                ],
+                                              ),
+                                            child:Padding( padding: EdgeInsets.only(bottom: 10) ,
+                                            child:MaterialButton
+                                              (
+                                              color: Colors.blueAccent.shade100,
+                                              minWidth: 100,
+                                              height: 100,
                                               onPressed:(){},
-                                              child: Text("B"),
-                                              ),
-                                            MaterialButton(
-                                                onPressed: (){},
-                                                child: Text("C"),
+                                              child: Icon(Icons.stop_circle_outlined,size: 60,color: Colors.red, ),
+                                              ),),),
+                                            Container(
+                                            decoration:BoxDecoration
+                                              (
+                                              boxShadow:
+                                              [
+                                                BoxShadow
+                                                  (
+                                                  color: Colors.black.withOpacity(0.35),
+                                                  spreadRadius: 1,
+                                                  blurRadius: 60,
+                                                  offset: Offset(0,20),
+                                                )
+                                              ],
                                             ),
+                                            child:Padding(padding: EdgeInsets.only(bottom: 10),
+                                            child:MaterialButton(
+                                              color: Colors.blueAccent.shade100,
+                                              minWidth: 100,
+                                              height: 100,
+                                              onPressed: (){},
+                                              child: Icon(CupertinoIcons.arrow_down,size: 60,color: Colors.white,)
+                                            ),),),
                                           ],
-                                      ),
-                                  ),
+                                      ), ),
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(height: 100,),
+                        SizedBox(height: 20,),
                         Container
                           (
-                            width: MediaQuery.of(context).size.width,
-                            height: 100,
-                            decoration: BoxDecoration
-                              (
-                                color: Colors.yellow,
-                              ),
+                            width: MediaQuery.of(context).size.width*0.95,
+                            height: 500,
+                                child: Column
+                                  (
+                                      children: <Widget>
+                                      [
+                                        Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text("Setare Scară axele XY(milimetri):",style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.063),),),
+                                        SizedBox(height: 10,),
+                                        Align(alignment: Alignment.topLeft,
+                                        child:ToggleButtons(
+                                            constraints: BoxConstraints
+                                              (
+                                                minWidth: MediaQuery.of(context).size.width*0.132,
+                                                minHeight: 55,
+                                              ),
+                                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                                            selectedBorderColor: Colors.blueAccent.shade100,
+                                            fillColor: Colors.blueAccent.shade100,
+                                            selectedColor: Colors.white,
+                                            color: Colors.blueAccent.shade100,
+                                            children:
+                                            [
+                                              Text("0.01",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("0.1",style:  TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("1",style:    TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("5",style:    TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("10",style:   TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("50",style:   TextStyle(fontWeight: FontWeight.bold),),
+                                              Text("100",style:  TextStyle(fontWeight: FontWeight.bold),),
+                                            ],
+                                            onPressed: (int index)
+                                            {
+                                              for(int i=0;i<7;i++)
+                                              {
+                                                selector_xy[i] = false;
+                                              }
+                                              selector_xy[index] = true;
+                                              setState(() {
+                                              });
+                                            },
+                                            isSelected: selector_xy),),
+                                        SizedBox(height: 25,),
+                                        Align
+                                          (
+                                            alignment: Alignment.topLeft,
+                                            child: Text("Setare Scară axa Z(milimetri):",style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.063),
+                                          ), ),
+                                        SizedBox(height: 10,),
+                                        Align(
+                                            alignment: Alignment.topLeft,
+                                            child: ToggleButtons
+                                              (
+                                              borderRadius: BorderRadius.all(Radius.circular(8)),
+                                              selectedBorderColor: Colors.blueAccent.shade100,
+                                              fillColor: Colors.blueAccent.shade100,
+                                              selectedColor: Colors.white,
+                                              color: Colors.blueAccent.shade100,
+                                                constraints: BoxConstraints
+                                                (
+                                                  minWidth: MediaQuery.of(context).size.width*0.132,
+                                                  minHeight: 55,
+                                                ),
+
+                                              children:
+                                                [
+                                                  Text("0.01",style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("0.1", style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("1",   style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("5",   style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("10",  style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("50",  style: TextStyle(fontWeight: FontWeight.bold),),
+                                                  Text("100", style: TextStyle(fontWeight: FontWeight.bold),),
+                                                ],
+                                                onPressed: (int index)
+                                                {
+                                                  for(int i=0;i<7;i++)
+                                                  {
+                                                    selector_z[i] = false;
+                                                  }
+                                                  selector_z[index] = true;
+                                                  setState(() {});
+                                                },
+                                              isSelected: selector_z,
+                                              ),
+                                          ),
+                                        SizedBox(height: 25,),
+                                        Align
+                                          (
+                                            alignment: Alignment.topLeft,
+                                            child: Text("Setare rotații:",style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.063),)
+                                          ),
+                                        Align
+                                          (
+                                            alignment: Alignment.topLeft,
+                                            child: Slider
+                                              (
+                                                activeColor: Colors.blueAccent.shade100,
+                                                value: current_slider_value,
+                                                max: 1000,
+                                                divisions: 1000,
+                                                label: current_slider_value.toString(),
+                                                onChanged: (double value)
+                                                {
+                                                  current_slider_value = value;
+                                                  setState(() {});
+                                                },
+                                              ),
+                                          ),
+                                        FittedBox(
+                                        child:Row
+                                          (
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>
+                                            [
+                                              Container(
+                                                height: 50,
+                                                width: 100,
+                                                decoration: BoxDecoration
+                                                  (
+                                                    color: Colors.blueAccent.shade100,
+                                                    borderRadius: BorderRadius.circular(8),
+                                                    boxShadow:
+                                                    [
+                                                      BoxShadow
+                                                        (
+                                                          color: Colors.black.withOpacity(0.35),
+                                                          spreadRadius: 1,
+                                                          blurRadius: 60,
+                                                          offset: Offset(15,15)
+                                                      ),
+                                                    ],
+                                                ),
+                                              child:MaterialButton
+                                                (
+                                                onPressed:(){},
+                                                child: Text("START",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+                                                ), ),
+                                                SizedBox(width: MediaQuery.of(context).size.width*0.30),
+                                                Container(
+                                                  height: 50,
+                                                  width: 100,
+                                                  decoration: BoxDecoration
+                                                    (
+                                                      color: Colors.blueAccent.shade100,
+                                                      borderRadius: BorderRadius.circular(10),
+                                                      boxShadow:
+                                                      [
+                                                        BoxShadow
+                                                          (
+                                                            color: Colors.black.withOpacity(0.35),
+                                                            spreadRadius: 1,
+                                                            blurRadius: 60,
+                                                            offset: Offset(15,15)
+                                                          ),
+                                                      ],
+                                                    ),
+                                                child: MaterialButton
+                                                  (
+                                                    onPressed:(){},
+                                                    child: Text("STOP",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
+                                                  ),),
+                                            ],
+                                          ), ),
+                                      ],
+                                  ),
                           ),
                       ],
                   ),
                 ),
-
               ],
+          ),
           ),
         ),
     );
