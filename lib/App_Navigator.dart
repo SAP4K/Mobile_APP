@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'list_projects.dart';
 import 'HomeWindow.dart';
 import 'package:go_router/go_router.dart';
-
+import 'Notification.dart';
+import 'Setari.dart';
+import 'notification_detalii.dart';
 class wrapper extends StatefulWidget
 {
   final StatefulNavigationShell navigationShell;
@@ -120,8 +122,20 @@ class app_Navigatr
                       name: "Notificari",
                       builder: (context,state)
                       {
-                        return Text("Notificari");
+                        return notification();
                       },
+                    routes:
+                    [
+                      GoRoute
+                        (
+                          path: "/Detalii",
+                          name: "Detalii",
+                          builder: (context,state)
+                          {
+                            return detail_notification();
+                          }
+                        )
+                    ]
                   ),
                 ],
               ),
@@ -136,7 +150,7 @@ class app_Navigatr
                           name: "Setting",
                           builder: (context,state)
                           {
-                            return Text("Setari");
+                            return  settings();
                           },
                         ),
                     ],

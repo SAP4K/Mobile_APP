@@ -368,15 +368,74 @@ class _HomeWindowState extends State<HomeWindow> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20,),
                         Container
                           (
                             width: MediaQuery.of(context).size.width*0.95,
-                            height: 500,
+                            height: 600,
                                 child: Column
                                   (
                                       children: <Widget>
                                       [
+                                        SizedBox(height: 25,),
+                                        Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Text("Poziția de start:",style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.063),),),
+                                          SizedBox(height: 10,),
+                                          FittedBox(child:
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>
+                                            [
+                                              Container(
+                                                height: 50,
+                                                width: 100,
+                                                decoration: BoxDecoration
+                                                  (
+                                                  color: Colors.blueAccent.shade100,
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow:
+                                                  [
+                                                    BoxShadow
+                                                      (
+                                                        color: Colors.black.withOpacity(0.35),
+                                                        spreadRadius: 1,
+                                                        blurRadius: 60,
+                                                        offset: Offset(15,15)
+                                                    ),
+                                                  ],
+                                                ),
+                                                child:MaterialButton
+                                                  (
+                                                  onPressed:(){},
+                                                  child: Text("Setare",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.bold),),
+                                                ), ),
+                                              SizedBox(width: MediaQuery.of(context).size.width*0.30),
+                                              Container(
+                                                height: 50,
+                                                width: 100,
+                                                decoration: BoxDecoration
+                                                  (
+                                                  color: Colors.blueAccent.shade100,
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  boxShadow:
+                                                  [
+                                                    BoxShadow
+                                                      (
+                                                        color: Colors.black.withOpacity(0.35),
+                                                        spreadRadius: 1,
+                                                        blurRadius: 60,
+                                                        offset: Offset(15,15)
+                                                    ),
+                                                  ],
+                                                ),
+                                                child: MaterialButton
+                                                  (
+                                                  onPressed:(){},
+                                                  child: Text("Returnare",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.bold),),
+                                                ),),
+                                            ],
+                                          ),),
+                                        SizedBox(height: 25,),
                                         Align(
                                           alignment: Alignment.topLeft,
                                           child: Text("Setare Scară axele XY(milimetri):",style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.063),),),

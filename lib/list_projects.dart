@@ -3,9 +3,9 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'details_project.dart';
 import 'data_from_cnc_machine.dart';
 import 'appBar.dart';
-List<dates_from_cnc> dates = <dates_from_cnc>[dates_from_cnc.test('test.nc','11.11.2022',0.3,'200','1:11:21'),
-  dates_from_cnc.test('hello.nc', '20.01.2023', 0.7,'139','2:51:33'),
-  dates_from_cnc.test('tico.nc', '25.06.2023', 0.9,'99','4:23:01')];
+List<dates_from_cnc> dates = <dates_from_cnc>[dates_from_cnc.test('test.nc','11.11.2022',0.3,'200','1:11:21',"Complet"),
+  dates_from_cnc.test('hello.nc', '20.01.2023', 0.7,'139','2:51:33',"Eroare"),
+  dates_from_cnc.test('tico.nc', '25.06.2023', 1,'99','4:23:01',"Complet")];
 class ListaProiecte extends StatefulWidget
 {
   ListaProiecte();
@@ -45,7 +45,7 @@ class _ListaProiecteState extends State<ListaProiecte> {
               ),
               ),
           ),
-        ),);}
+        ),); }
 
   Widget build(BuildContext context)
   {
