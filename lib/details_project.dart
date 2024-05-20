@@ -106,7 +106,7 @@ class details_project extends StatelessWidget
                           row_details(context,'Data Realizarii',detail_object!.data!),
                           row_details(context,'Durata',detail_object!.durata!),
                           row_details(context,'Nr.Instructiuni',detail_object!.nr_instruction!),
-                          row_details(context, 'Data', detail_object!.data!),
+
                         ],
                     ),
                 ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'appBar.dart';
 class detail_notification extends StatefulWidget
 {
   @override
@@ -9,6 +9,14 @@ class detail_notification extends StatefulWidget
 class _detail_notificationState extends State<detail_notification> {
   Widget build(BuildContext context)
   {
-    return Text("aa");
+    return Scaffold
+      (
+        appBar: app_bar(context, "Detalii Notificare"),
+        body:
+          SafeArea
+          (
+            child: Text("abc"),
+          ),
+      );
   }
 }

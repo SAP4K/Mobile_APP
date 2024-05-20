@@ -56,8 +56,7 @@ class _wrapperState extends State<wrapper> {
   }
 }
 
-class app_Navigatr
-{
+class app_Navigator {
   static String initial = "/home";
   static final _rootNavigatorKey       = GlobalKey<NavigatorState>();
   static final _NavigatorAcasa         = GlobalKey<NavigatorState>();
@@ -70,75 +69,28 @@ class app_Navigatr
       navigatorKey:        _rootNavigatorKey,
       debugLogDiagnostics: true,
       routes:
-      [
-        StatefulShellRoute.indexedStack
-          (
-            builder: (context,state,NavigationShell)
-            {
-              return wrapper(NavigationShell);
-            },
-            branches: <StatefulShellBranch>
-            [
-              StatefulShellBranch
-                (
-                navigatorKey: _NavigatorListaProiecte,
-                routes: <RouteBase>
-                [
-                  GoRoute
-                    (
-                      path: "/Proiecte",
-                      name: "Proiecte",
-                      builder: (context,state)
-                      {
-                        return ListaProiecte();
-                      },
-                  ),
-                ],
-              ),
+      [StatefulShellRoute.indexedStack
+          (builder: (context,state,NavigationShell) {return wrapper(NavigationShell);},
+            branches: <StatefulShellBranch>[StatefulShellBranch(navigatorKey: _NavigatorListaProiecte,
+                routes: <RouteBase>[GoRoute(path: "/Proiecte",
+                                    name: "Proiecte",
+                                    builder: (context,state) {return ListaProiecte();},),],),
                 StatefulShellBranch
-                  (
-                  navigatorKey: _NavigatorAcasa,
-                  routes: <RouteBase>
-                  [
-                    GoRoute
-                      (
-                        path: "/Home",
-                        name: "Home",
-                        builder: (context,state)
-                        {
-                          return HomeWindow();
-                        }
-                      ),
-                  ],
-                  ),
+                  (navigatorKey: _NavigatorAcasa,
+                  routes: <RouteBase>[GoRoute(path: "/Home",
+                                      name: "Home",
+                                      builder: (context,state) {return HomeWindow();}),],),
               StatefulShellBranch
-                (
-                navigatorKey: _NavigatorNotififcari,
+                (navigatorKey: _NavigatorNotififcari,
                 routes: <RouteBase>
-                [
-                  GoRoute
-                    (
-                      path: "/Notificari",
-                      name: "Notificari",
-                      builder: (context,state)
-                      {
-                        return notification();
-                      },
-                    routes:
-                    [
-                      GoRoute
+                [GoRoute(path: "/Notificari",
+                         name: "Notificari",
+                      builder: (context,state) {return notification();},
+                    routes: [GoRoute
                         (
-                          path: "/Detalii",
-                          name: "Detalii",
-                          builder: (context,state)
-                          {
-                            return detail_notification();
-                          }
-                        )
-                    ]
-                  ),
-                ],
-              ),
+                          path: "Det",
+                          name: "Det",
+                          builder: (context,state) {return detail_notification();},),],),],),
                 StatefulShellBranch
                   (
                     navigatorKey: _NavigatorSetari,
@@ -148,15 +100,4 @@ class app_Navigatr
                         (
                           path: "/Setting",
                           name: "Setting",
-                          builder: (context,state)
-                          {
-                            return  settings();
-                          },
-                        ),
-                    ],
-                  ),
-            ],
-          ),
-      ],
-    );
-}
+                          builder: (context,state) {return  settings();},),],),],),],);}

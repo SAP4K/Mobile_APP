@@ -48,7 +48,7 @@ Widget notification_widget(BuildContext context, dates_from_cnc date)
                       style: ButtonStyle(alignment: Alignment.topLeft),
                       onPressed: ()
                       {
-                        context.goNamed("Detalii");
+                        context.goNamed("Det",);
                       },
                       child: Column
                         (

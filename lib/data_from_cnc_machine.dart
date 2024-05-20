@@ -10,15 +10,6 @@ class dates_from_cnc
   String? durata;
   String? status;
   dates_from_cnc(){}
-  dates_from_cnc.test(this.name,this.data,this.proncentes,this.nr_instruction,this.durata,this.status)
-  {
-    print(this.durata!);
-  }
-  Widget build(BuildContext)
-  {
-    return Scaffold
-      (
-        body: Text('ww'),
-    );
-  }
+  dates_from_cnc.test(this.name,this.data,this.proncentes,this.nr_instruction,this.durata,this.status);
+  
 }
