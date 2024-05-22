@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'appBar.dart';
-
+import 'http_requests.dart';
 class HomeWindow extends StatefulWidget
 {
   @override
@@ -25,8 +25,6 @@ class _HomeWindowState extends State<HomeWindow> {
   [
     false,
     true,
-    false,
-    false,
     false,
     false,
     false,
@@ -118,7 +116,7 @@ class _HomeWindowState extends State<HomeWindow> {
                                                     height: 100,
                                                       onPressed: ()
                                                       {
-
+                                                        Http_request().Post("101");
                                                       },
                                                     child: Icon(CupertinoIcons.arrow_up,size: 60,color: Colors.white,),
                                                 ), ),),
@@ -173,7 +171,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                   color: Colors.blueAccent.shade100,
                                                   minWidth: 100,
                                                   height: 100,
-                                                  onPressed: (){},
+                                                  onPressed: ()
+                                                  {
+                                                    Http_request().Post("103");
+                                                  },
                                                   child: Icon(CupertinoIcons.arrow_left,size: 60,color: Colors.white,)
                                                 ), ), ),
                                               Padding( padding: EdgeInsets.only(right: 10) ,
@@ -182,7 +183,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 color: Colors.blueAccent.shade100,
                                                 minWidth: 100,
                                                 height: 100,
-                                                onPressed: (){},
+                                                onPressed: ()
+                                                {
+                                                  Http_request().Post("111");
+                                                },
                                                 child: Icon(Icons.stop_circle_outlined,size: 60,color: Colors.red, )
                                               ),),
                                               Container(
@@ -204,7 +208,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 color: Colors.blueAccent.shade100,
                                                 minWidth: 100,
                                                 height: 100,
-                                                onPressed: (){},
+                                                onPressed: ()
+                                                {
+                                                  Http_request().Post("104");
+                                                },
                                                 child: Icon(CupertinoIcons.arrow_right,size: 60,color: Colors.white,)
                                               ), ),
                                             ],
@@ -255,7 +262,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                color: Colors.blueAccent.shade100,
                                                minWidth: 100,
                                                height: 100,
-                                               onPressed: (){},
+                                               onPressed: ()
+                                               {
+                                                 Http_request().Post("102");
+                                               },
                                                child: Icon(CupertinoIcons.arrow_down,size: 60,color:Colors.white),
                                              ),),),
                                              Container(
@@ -277,7 +287,9 @@ class _HomeWindowState extends State<HomeWindow> {
                                                color: Colors.blueAccent.shade100,
                                                minWidth: 100,
                                                height: 100,
-                                               onPressed: (){},
+                                               onPressed: ()
+                                               {
+                                               },
                                                child: Icon(CupertinoIcons.arrow_down_right,size: 60,color: Colors.white)
                                              ), ),
                                            ],
@@ -296,7 +308,6 @@ class _HomeWindowState extends State<HomeWindow> {
                                             Container(
                                               decoration:BoxDecoration
                                                     (
-
                                                         boxShadow:
                                                         [
                                                         BoxShadow
@@ -314,7 +325,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 color: Colors.blueAccent.shade100,
                                                 minWidth: 100,
                                                 height: 100,
-                                                onPressed: (){},
+                                                onPressed: ()
+                                                {
+                                                  Http_request().Post("105");
+                                                },
                                                 child: Icon(CupertinoIcons.arrow_up,size: 60,color: Colors.white)
                                               ),),),
                                             Container(
@@ -337,7 +351,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                               color: Colors.blueAccent.shade100,
                                               minWidth: 100,
                                               height: 100,
-                                              onPressed:(){},
+                                              onPressed:()
+                                              {
+                                                Http_request().Post("111");
+                                              },
                                               child: Icon(Icons.stop_circle_outlined,size: 60,color: Colors.red, ),
                                               ),),),
                                             Container(
@@ -359,7 +376,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                               color: Colors.blueAccent.shade100,
                                               minWidth: 100,
                                               height: 100,
-                                              onPressed: (){},
+                                              onPressed: ()
+                                              {
+                                                Http_request().Post("106");
+                                              },
                                               child: Icon(CupertinoIcons.arrow_down,size: 60,color: Colors.white,)
                                             ),),),
                                           ],
@@ -406,7 +426,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 ),
                                                 child:MaterialButton
                                                   (
-                                                  onPressed:(){},
+                                                  onPressed:()
+                                                  {
+                                                    Http_request().Post("107");
+                                                  },
                                                   child: Text("Setare",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.bold),),
                                                 ), ),
                                               SizedBox(width: MediaQuery.of(context).size.width*0.30),
@@ -430,7 +453,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 ),
                                                 child: MaterialButton
                                                   (
-                                                  onPressed:(){},
+                                                  onPressed:()
+                                                  {
+                                                    Http_request().Post("108");
+                                                  },
                                                   child: Text("Returnare",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.bold),),
                                                 ),),
                                             ],
@@ -469,6 +495,7 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 selector_xy[i] = false;
                                               }
                                               selector_xy[index] = true;
+                                              Http_request().Post("109_"+index.toString());
                                               setState(() {
                                               });
                                             },
@@ -502,15 +529,14 @@ class _HomeWindowState extends State<HomeWindow> {
                                                   Text("1",   style: TextStyle(fontWeight: FontWeight.bold),),
                                                   Text("5",   style: TextStyle(fontWeight: FontWeight.bold),),
                                                   Text("10",  style: TextStyle(fontWeight: FontWeight.bold),),
-                                                  Text("50",  style: TextStyle(fontWeight: FontWeight.bold),),
-                                                  Text("100", style: TextStyle(fontWeight: FontWeight.bold),),
                                                 ],
                                                 onPressed: (int index)
                                                 {
-                                                  for(int i=0;i<7;i++)
+                                                  for(int i=0;i<5;i++)
                                                   {
                                                     selector_z[i] = false;
                                                   }
+                                                  Http_request().Post("110_"+index.toString());
                                                   selector_z[index] = true;
                                                   setState(() {});
                                                 },
@@ -536,6 +562,7 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 onChanged: (double value)
                                                 {
                                                   current_slider_value = value;
+                                                  Http_request().Post("112_"+current_slider_value.toInt().toString());
                                                   setState(() {});
                                                 },
                                               ),
@@ -566,7 +593,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                 ),
                                               child:MaterialButton
                                                 (
-                                                onPressed:(){},
+                                                onPressed:()
+                                                {
+                                                  Http_request().Post("113");
+                                                },
                                                 child: Text("START",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
                                                 ), ),
                                                 SizedBox(width: MediaQuery.of(context).size.width*0.30),
@@ -590,7 +620,10 @@ class _HomeWindowState extends State<HomeWindow> {
                                                     ),
                                                 child: MaterialButton
                                                   (
-                                                    onPressed:(){},
+                                                    onPressed:()
+                                                    {
+                                                      Http_request().Post("114");
+                                                    },
                                                     child: Text("STOP",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
                                                   ),),
                                             ],
